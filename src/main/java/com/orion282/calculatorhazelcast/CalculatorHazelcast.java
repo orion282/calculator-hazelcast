@@ -17,7 +17,7 @@ public class CalculatorHazelcast {
 			e.printStackTrace();
 		}
 
-		return a + b;
 		System.out.println("No result from the cache");
+		return a + b;
 	}
 }
