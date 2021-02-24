@@ -9,15 +9,13 @@ public class CalculatorHazelcast {
 	@Cacheable("sum")
 	public int sum(int a, int b) {
 		try {
-			System.out.println("Try to get result from cache");
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 		}
 		catch (InterruptedException e) {
 			System.out.println("Cache failed...");
 			e.printStackTrace();
 		}
 
-		System.out.println("No result from the cache");
 		return a + b;
 	}
 }
