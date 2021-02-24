@@ -1,4 +1,4 @@
-- hosts: test_app
+- hosts: test_app2
   become: yes
   become_method: sudo
   tasks:
