@@ -1,0 +1,37 @@
+- hosts: test_app
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    yum:
+        name: java-1.8.0-openjdk
+        state: present
+        update_cache: yes
+  - name: create directory for Calculator
+    file:
+        path: /var/calculator
+        state: directory
+  - name: copy Calculator starting script
+    copy:
+        src: calculator.sh
+        dest: /var/calculator/calculator.sh
+        mode: a+x
+  - name: configure Calculator as a service
+    file:
+        path: /etc/init.d/calculator
+        state: link
+        force: yes
+        src: /var/calculator/calculator.sh
+  - name: copy Calculator
+    copy:
+        src: ../build/libs/calculator-hazelcast-0.0.1-SNAPSHOT.jar
+        dest: /var/calculator/calculator.jar
+        mode: a+x
+    notify:
+    - restart Calculator
+  handlers:
+  - name: restart Calculator
+    service:
+        name: calculator
+        enabled: yes
+        state: restarted

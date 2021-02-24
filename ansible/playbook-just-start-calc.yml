@@ -1,0 +1,9 @@
+- hosts: test_app
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: start calculator service on Restarted container-host
+    service:
+        name: calculator
+        enabled: yes
+        state: started

@@ -1,0 +1,35 @@
+---
+- hosts: test_caching
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    yum:
+        name: java-1.8.0-openjdk
+        state: present
+        update_cache: yes
+  - name: create Hazelcast directory
+    file:
+        path: /var/hazelcast
+        state: directory
+  - name: download Hazelcast
+    get_url:
+        url: https://repo1.maven.org/maven2/com/hazelcast/hazelcast/3.12/hazelcast-3.12.jar
+        dest: /var/hazelcast/hazelcast.jar
+        mode: a+r
+  - name: copy Hazelcast starting script
+    copy:
+        src: hazelcast.sh
+        dest: /var/hazelcast/hazelcast.sh
+        mode: a+x
+  - name: configure Hazelcast as a service
+    file:
+        path: /etc/init.d/hazelcast
+        state: link
+        force: yes
+        src: /var/hazelcast/hazelcast.sh
+  - name: start Hazelcast
+    service:
+        name: hazelcast
+        enabled: yes
+        state: started
