@@ -1,7 +1,7 @@
-1. CD platform description
-2. Create a container for Jenkins
-3. Create a contanier for the Ansible's hosts
-4. Configure the Inventory for Ansible
-5. Create the CI pipeline for the web app development (checkout-compile-build-docker build-Deploy-Acceptance test)
-6. Create the Ansible's playbooks
-7. Deploy with Ansible
+1. Platforme description
+2. Installer Jenkins avec Docker: voir le doc "Demarrer_Jenkins.docx"
+3. Créer le Pipeline d'Intégration Continue
+4. Créer un conteneur pour les hôtes Ansible
+5. Configurer le Inventory pour Ansible
+6. Créer les playbooks pour Ansible
+7. Deployer avec Ansible
