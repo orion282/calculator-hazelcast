@@ -18,5 +18,6 @@ public class CalculatorHazelcast {
 		}
 
 		return a + b;
+		System.out.println("No result from the cache");
 	}
 }
