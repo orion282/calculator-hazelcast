@@ -1,4 +1,4 @@
-- hosts: test_app2
+- hosts: calculator_preprod
   become: yes
   become_method: sudo
   tasks:

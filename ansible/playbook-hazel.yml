@@ -1,5 +1,5 @@
 ---
-- hosts: test_caching
+- hosts: hazelcast_service
   become: yes
   become_method: sudo
   tasks:

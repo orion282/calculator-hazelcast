@@ -1,0 +1,2 @@
+com/orion282/calculatorhazelcast/CalculatorHazelcastApplicationTests.java
+ com.orion282.calculatorhazelcast.CalculatorHazelcastApplicationTests
