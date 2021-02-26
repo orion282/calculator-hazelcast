@@ -1,5 +1,4 @@
 [webservers]
-test_app ansible_host=172.17.0.3 ansible_user=manusamp
-test_caching ansible_host=172.17.0.4 ansible_user=manusamp
-prod_app ansible_host=172.17.0.5 ansible_user=manusamp
-prod_caching ansible_host=172.17.0.6 ansible_user=manusamp
+calculator_preprod ansible_host=172.17.0.3 ansible_user=manusamp
+hazelcast_service ansible_host=172.17.0.4 ansible_user=manusamp
+calculator_prod ansible_host=172.17.0.5 ansible_user=manusamp
