@@ -7,3 +7,6 @@
 7. Quand la phase de développement de l'application est terminée, il est possible de déployer l'application par ansible. Avant de executer le  playbook, lancer le build Gradle: ./gradlew build
 8. Lancer le playbook pour le calculateur: "ansible-playbook -i manu-hosts playbook-calc.yml". L'app sera installé sur le hôte rapporté dans le fichier .yml (preprod dans ce cas; ip: 172.17.0.3)
 9. L'app peut être testé par l'url "http://172.17.0.3:8080/sum?a=11&b=18": ça devrait retourner le résultat (29) après 10 secondes (pour le sleep dans la méthode sum). En répétant ce test le résultat devrait être immédiat, démontrant que le service de caching a fonctionné. C'est le même type de test exécuté en phase d'acceptation test dans la pipeline.
+
+###############################################################################################
+-Dans le dossier "kubernetes" il y a des indications su comme est possible utiliser kubernets pour déployer l'application
